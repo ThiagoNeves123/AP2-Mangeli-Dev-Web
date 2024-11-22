@@ -1,0 +1,195 @@
+:root {
+    --background-color: black;
+    --card-background-color: white;
+}
+
+/* Importa a fonte */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+body {
+    font-family: 'Josefin Sans', sans-serif; 
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: auto;
+}
+
+/* Titulo */
+.nome-content {
+    color: white;
+    margin: 20px;
+    max-width: 1000px;
+}
+
+/* Container Principal */
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1000px;
+    height: auto;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 20px;
+    background-color: var(--card-background-color);
+    box-shadow: 0px 0px 12px 3px rgba(0, 0, 0, 0.55);
+    position: relative;
+}
+
+/* Container de Informações */
+.info-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Imagem do Atleta */
+.imagem {
+    max-width: 50%;
+    height: auto;
+    display: block;
+    margin: 10px;
+    border-radius: 8px;
+}
+
+/* Container de Texto */
+.text-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 10px;
+    text-align: justify;
+}
+
+/* Descrição do Atleta */
+.content-descricao {
+    margin: 10px 0;
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    font-size: 1.2em;
+    color: #000;
+    text-align: justify;
+}
+
+/* Container de Estatísticas */
+.stats-container {
+    width: 100%;
+    max-width: 960px;
+    text-align: left;
+}
+
+/* Estatísticas */
+.stats {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.4em;
+    color: #000;
+    text-align: left;
+}
+
+/* Botão de Voltar */
+.botao-voltar {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    align-self: flex-start;
+}
+
+.botao-voltar:hover {
+    background-color: #333;
+}
+
+@media (max-width: 768px) {
+    .botao-voltar {
+        position: static;
+        margin: 20px 0;
+    }
+
+    .card {
+        height: auto;
+        margin: 5px 20px;
+    }
+
+    .info-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .imagem, .content-descricao {
+        max-width: 100%;
+        width: 80%;
+    }
+
+    .imagem {
+        height: 500px;
+    }
+
+    .content-descricao {
+        margin-top: 20px;
+        font-size: 1.2em;
+    }
+
+    .stats-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 0.9em;
+        text-align: left;
+    }
+
+    .stats {
+        font-size: 1.2em;
+        text-align: left;
+    }
+
+    .text-container {
+        width: 90%;
+        text-align: justify;
+    }
+}
+
+@media (min-width: 1100px) and (max-width: 1400px) {
+    .card {
+        height: auto;
+        margin: 5px 20px;
+    }
+
+    .imagem {
+        height: 400px;
+    }
+
+    .nome-content {
+        margin: 20px;
+        margin-bottom: 0;
+        margin-top: 10px;
+        font-size: 20px;
+    }
+
+    .info-container {
+        margin-bottom: 0px;
+    }
+
+    .stats {
+        font-size: 12px;
+        text-align: left;
+    }
+
+    .content-descricao {
+        font-size: 16px;
+    }
+}

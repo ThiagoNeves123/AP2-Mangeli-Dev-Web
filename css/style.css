@@ -1,0 +1,246 @@
+/* O objetivo deste css é criar um esquema de cores com a temática do time Botafogo */
+
+/* Define as variáveis de cores para o fundo, o card e o botão hover */
+:root {
+    --background-color: black;
+    --card-background-color: white;
+    --button-hover-color: #555;
+}
+
+/* Importa a fonte */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+body {
+    background-color: var(--background-color); /* Cor de fundo */
+    font-family: 'Josefin Sans', sans-serif; /* Fonte usada no site */
+}
+
+/* Container principal para centralizar os itens usando grid */
+.container {
+    display: grid;
+    justify-content: center;
+    margin: 0 auto;
+    place-items: center; /* Alinha os itens ao centro */
+}
+
+/* Estiliza o container de login, centralizando-o na tela */
+#section-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centraliza a tela */
+}
+
+/* Estiliza o card de login, com margens, bordas arredondadas */
+#card-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    padding: 20px;
+    height: 150px;
+    width: 150px;
+    border-radius: 2px;
+    background-color: var(--card-background-color);
+    gap: 10px;
+}
+
+/* Estiliza os campos de senha com bordas e padding */
+#senha {
+    width: 150px;
+    padding: 5px;
+    margin: 1px auto;
+    border: 1px solid #000;
+    border-radius: 2px;
+    font-size: 14px;
+}
+
+/* Estiliza os botões (login, logout) */
+#botaoLogin, #logout {
+    width: 70px;
+    padding: 5px;
+    border: none;
+    border-radius: 2px;
+    background-color: black;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Transição suave para a cor de fundo */
+}
+
+/* Estiliza os botões ao passar o mouse sobre eles */
+#teamSelection button {
+    width: 150px;
+    padding: 10px;
+    margin: 10px 1px;
+    border: none;
+    border-radius: 2px;
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Altera a cor de fundo dos botões quando o mouse passa sobre eles */
+#teamSelection button:hover, #logout:hover, #botaoLogin:hover, .botao-voltar:hover {
+    background-color: var(--button-hover-color);
+}
+
+/* Classe para ocultar elementos */
+.hidden {
+    display: none;
+}
+
+/* Estiliza os botões de seleção */
+.botao-selecao {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+}
+
+/* Estiliza os campos de seleção com borda e padding */
+.dropdown {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 2px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* Estiliza o campo de busca */
+#busca {
+    width: 95%;
+    padding: 10px;
+    margin: 0 auto;
+    border: 1px solid #000;
+    border-radius: 2px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* Estiliza o container de exibição de conteúdo */
+#container {
+    display: grid;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    max-width: 1400px;
+}
+
+/* Estiliza os cards com bordas e sombras */
+article {
+    background-color: var(--card-background-color);
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    border-radius: 2px;
+    transition: transform 0.15s; /* Adiciona transição suave ao aumentar de tamanho */
+}
+
+/* Estiliza as imagens */
+img {
+    max-width: 270px;
+    border-radius: 2px;
+    margin: 20px 5px;
+    margin-top: 0px;
+}
+
+/* Efeito de aumento ao passar o mouse */
+article:hover {
+    transform: scale(1.05);
+}
+
+h1 {
+    display: flex;
+    color: #000;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 85px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+@media (max-width: 768px) {
+    #container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    article {
+        width: 300px;
+    }
+    .dropdown {
+        width: 110%;
+        padding: 5px;
+    }
+    #busca {
+        width: 101%;
+        padding: 8px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    #container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    article {
+        width: 300px;
+    }
+    .dropdown {
+        width: 95%;
+    }
+    #busca {
+        width: 95%;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1300px) {
+    #container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    article {
+        width: 300px;
+    }
+    .dropdown {
+        width: 95%;
+    }
+    #busca {
+        width: 95%;
+    }
+}
+
+@media (min-width: 1301px) {
+    #container {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    article {
+        width: 236px;
+    }
+
+    img {
+        width: 216px;
+    }
+    .dropdown {
+        width: 95%;
+    }
+    #busca {
+        width: 95%;
+    }
+}
+
+@media (min-width: 1024px) {
+    #card-login {
+        width: 300px;
+        height: 300px;
+    }
+    #senha, #botaoLogin {
+        width: 200px;
+        font-size: 18px;
+    }
+}
